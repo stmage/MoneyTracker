@@ -22,7 +22,7 @@ public class Category {
         res.add("Еда");
         res.add("Жилье");
         res.add("Машина");
-        res.add("Девчонки");
+        res.add("Тест");
         res.add("Прочее");
         return res;
     }
