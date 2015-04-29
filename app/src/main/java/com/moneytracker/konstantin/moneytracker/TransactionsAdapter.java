@@ -28,6 +28,7 @@ public class TransactionsAdapter extends ArrayAdapter<Transaction> {
         TextView date = (TextView) convertView.findViewById(R.id.item_date);
         TextView sum = (TextView) convertView.findViewById(R.id.item_sum);
 
+        // Отображаем элементы
         title.setText(transaction.getTitle());
         category.setText(transaction.getCategory());
         date.setText(transaction.getStringDate());
