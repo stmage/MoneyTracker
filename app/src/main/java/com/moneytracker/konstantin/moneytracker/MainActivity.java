@@ -1,7 +1,7 @@
 package com.moneytracker.konstantin.moneytracker;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -14,19 +14,16 @@ public class MainActivity extends ActionBarActivity {
     private TransactionsAdapter transactionsAdapter;
 
     private void initTransaction() {
-        transactions = new Transactions();
-        transactions.add("Шины", "Машина", "12-04-2015", "20000");
-        transactions.add("Интернет", "11-04-2015", "2000");
+        setTransactions(new Transactions());
+        getTransactions().add("Шины", "Машина", "12-04-2015", "20000");
+        getTransactions().add("Интернет", "11-04-2015", "2000");
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        initTransaction();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initTransaction();
-        transactionsAdapter = new TransactionsAdapter(this, transactions);
-        listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(transactionsAdapter);
     }
 
 
@@ -50,5 +47,13 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public Transactions getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(Transactions transactions) {
+        this.transactions = transactions;
     }
 }
