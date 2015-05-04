@@ -1,7 +1,5 @@
 package com.moneytracker.konstantin.moneytracker;
 
-import com.moneytracker.konstantin.moneytracker.Transaction;
-
 import java.util.ArrayList;
 
 /**
@@ -29,6 +27,7 @@ public class Transactions {
         el.setCategory("");
         el.setStringDate(date);
         el.setStringSum(sum);
+        transactions.add(el);
     }
 
     public void add(String title, String category, String date, String sum) {
@@ -37,5 +36,10 @@ public class Transactions {
         el.setCategory(category);
         el.setStringDate(date);
         el.setStringSum(sum);
+        transactions.add(el);
+    }
+
+    public Transaction getTransaction(int position) {
+        return transactions.get(position);
     }
 }
