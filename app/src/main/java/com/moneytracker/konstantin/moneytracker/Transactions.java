@@ -42,4 +42,11 @@ public class Transactions {
     public Transaction getTransaction(int position) {
         return transactions.get(position);
     }
+
+    public static Transactions getTestInstance() {
+        Transactions res = new Transactions();
+        res.add("Шины", "Машина", "12-04-2015", "20000");
+        res.add("Интернет", "11-04-2015", "2000");
+        return res;
+    }
 }

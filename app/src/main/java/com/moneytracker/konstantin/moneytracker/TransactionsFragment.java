@@ -23,9 +23,8 @@ public class TransactionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View inflate = inflater.inflate(R.layout.fragment_transactions, container);
 
-        // Некрасиво но работает
-        MainActivity mainActivity = (MainActivity) getActivity();
-        transactionsAdapter = new TransactionsAdapter(mainActivity, mainActivity.getTransactions());
+        transactions = Transactions.getTestInstance();
+        transactionsAdapter = new TransactionsAdapter(getActivity(), transactions);
 
         listView = (ListView) inflate.findViewById(R.id.list_transactions);
         listView.setAdapter(transactionsAdapter);
