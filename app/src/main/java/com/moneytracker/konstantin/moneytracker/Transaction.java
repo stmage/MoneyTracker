@@ -1,8 +1,7 @@
 package com.moneytracker.konstantin.moneytracker;
 
-import com.moneytracker.konstantin.moneytracker.Category;
-
 import java.sql.Date;
+import java.text.DateFormat;
 
 /**
  * Created by Konstantin on 25.04.2015.
@@ -59,7 +58,7 @@ public class Transaction {
     }
 
     public String getStringDate() {
-        return String.valueOf(date);
+        return DateFormat.getInstance().format(date);
     }
 
     public void setStringDate(String date) {

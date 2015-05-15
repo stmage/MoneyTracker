@@ -1,7 +1,5 @@
 package com.moneytracker.konstantin.moneytracker;
 
-import java.util.ArrayList;
-
 /**
  * Created by Konstantin on 25.04.2015.
  */
@@ -16,17 +14,32 @@ public class Category {
     public void setCategory(String category) {
         this.category = category;
     }
-    
-    public ArrayList getAllCategories() {
-        ArrayList res = new ArrayList();
-        res.add("Еда");
-        res.add("Жилье");
-        res.add("Машина");
-        res.add("Тест");
-        res.add("Прочее");
-        return res;
+
+    private int number;
+
+    public int getNumber() {
+        return number;
     }
+
+    public String getStringNumber() {
+        return String.valueOf(number);
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public Category(int number, String category) {
+        this.category = category;
+        this.number = number;
+    }
+
+    public Category() {
+    }
+
     public String getDefaultCategory() {
         return  "Прочее";
     }
+
+
 }
