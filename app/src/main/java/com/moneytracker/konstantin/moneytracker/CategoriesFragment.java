@@ -9,25 +9,22 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 /**
- * Created by Konstantin on 04.05.2015.
+ * Created by Konstantin on 15.05.2015.
  */
-public class TransactionsFragment extends Fragment {
-
+public class CategoriesFragment extends Fragment {
     private ListView listView;
     private TransactionsAdapter transactionsAdapter;
-
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View inflate = inflater.inflate(R.layout.fragment_transactions, null);
+        final View inflate = inflater.inflate(R.layout.fragment_categories, null);
 
-        Transactions transactions = Transactions.getTestInstance();
-        transactionsAdapter = new TransactionsAdapter(getActivity(), transactions);
+        Categories categories = new Categories();
+        CategoriesAdapter categoriesAdapter = new CategoriesAdapter(getActivity(), categories);
 
-        listView = (ListView) inflate.findViewById(R.id.list_transactions);
-        listView.setAdapter(transactionsAdapter);
+        listView = (ListView) inflate.findViewById(R.id.list_categories);
+        listView.setAdapter(categoriesAdapter);
         return inflate;
     }
-
 }

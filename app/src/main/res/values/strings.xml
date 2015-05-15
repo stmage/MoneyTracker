@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">MoneyTracker</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="button">New Button</string>
     <string name="transactions">Траты</string>
+    <string name="categories">Категории</string>
+    <string name="statistic">Статистика</string>
+    <string name="statistic_later">Здесь будет статистика!</string>
+
 </resources>

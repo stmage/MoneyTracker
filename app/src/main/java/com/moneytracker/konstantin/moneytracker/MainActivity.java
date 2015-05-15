@@ -18,7 +18,7 @@ public class MainActivity extends ActionBarActivity {
     private Transactions transactions;
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
-    private ListView left_drawer;
+    private ListView leftDrawer;
     private ActionBarDrawerToggle drawerToggle;
 
     @Override
@@ -27,12 +27,12 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        left_drawer = (ListView) findViewById(R.id.left_drawer);
+        leftDrawer = (ListView) findViewById(R.id.left_drawer);
 
-        String[] navigationData = new String[]{"Траты", "Категории", "Статистика"};
+        String[] navigationData = new String[]{getString(R.string.transactions), getString(R.string.categories), getString(R.string.statistic)};
         ArrayAdapter<String> navigationDrawerAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, navigationData);
-        left_drawer.setAdapter(navigationDrawerAdapter);
-        left_drawer.setOnItemClickListener(new DrawerItemClickListener());
+        leftDrawer.setAdapter(navigationDrawerAdapter);
+        leftDrawer.setOnItemClickListener(new DrawerItemClickListener());
 
 
         if (toolbar != null) {
@@ -82,21 +82,23 @@ public class MainActivity extends ActionBarActivity {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             if (position == 0) {
-                left_drawer.setItemChecked(position, true);
-                drawerLayout.closeDrawer(left_drawer);
+                leftDrawer.setItemChecked(position, true);
+                drawerLayout.closeDrawer(leftDrawer);
                 setTitle(getString(R.string.transactions));
-                // Основной смысл тут, но падает с ошибкой.
-                //getFragmentManager().beginTransaction().replace(R.id.content_frame, new TransactionsFragment()).commit();
+                getFragmentManager().beginTransaction().replace(R.id.content_frame, new TransactionsFragment()).commit();
+            }
+            if (position == 1) {
+                leftDrawer.setItemChecked(position, true);
+                drawerLayout.closeDrawer(leftDrawer);
+                setTitle(getString(R.string.categories));
+                getFragmentManager().beginTransaction().replace(R.id.content_frame, new CategoriesFragment()).commit();
+            }
+            if (position == 2) {
+                leftDrawer.setItemChecked(position, true);
+                drawerLayout.closeDrawer(leftDrawer);
+                setTitle(getString(R.string.categories));
+                getFragmentManager().beginTransaction().replace(R.id.content_frame, new StatisticFragment()).commit();
             }
         }
-    }
-
-
-    public Transactions getTransactions() {
-        return transactions;
-    }
-
-    public void setTransactions(Transactions transactions) {
-        this.transactions = transactions;
     }
 }
