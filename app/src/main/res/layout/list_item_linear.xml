@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Container">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/item_linear_category"
+            style="@style/list_item_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="category" />
+
+        <TextView
+            android:id="@+id/item_linear_title"
+            style="@style/list_item_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="title" />
+
+        <TextView
+            android:id="@+id/item_linear_date"
+            style="@style/list_item_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date" />
+
+        <TextView
+            android:id="@+id/item_linear_sum"
+            style="@style/list_item_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sum" />
+    </LinearLayout>
+</RelativeLayout>
+
